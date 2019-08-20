@@ -11,26 +11,37 @@ public class OpenSaveImage {
    */
 
   public static BufferedImage openImage(String filePath) {
-    BufferedImage img;
     BufferedImage originalImg = null;
     File inputFile = null;
 
-    try{
+    try {
       inputFile = new File(filePath);
-    } catch (Exception e){
+    } catch (Exception e) {
       System.out.println("Error occurred!");
     }
 
     try {
       originalImg = ImageIO.read(inputFile);
-    } catch (Exception e){
+    } catch (Exception e) {
       System.out.println("Could not read image!");
     }
 
-    int width = originalImg.getWidth();
-    int height = originalImg.getHeight();
-    img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-    return img;
+    return originalImg;
   }
 
+  public static void SaveImage(BufferedImage img, String filePath) {
+    File outputFile = null;
+
+    try {
+      outputFile = new File(filePath);
+    } catch (Exception e) {
+      System.out.println("Couldn't find destination file");
+    }
+
+    try {
+      ImageIO.write(img, "jpg", outputFile);
+    } catch (Exception e) {
+      System.out.println("Could not write image!");
+    }
+  }
 }

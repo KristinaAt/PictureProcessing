@@ -1,5 +1,13 @@
-public class PictureProcessing{
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+public class PictureProcessing {
   public static void main(String[] args) {
 
+    BufferedImage img = OpenSaveImage.openImage(args[0]);
+    img = ImageFilters.PixelArtFilter(img);
+    OpenSaveImage.SaveImage(img, args[1]);
+
   }
-        }
+}
