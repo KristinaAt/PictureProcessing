@@ -29,6 +29,9 @@ public class OpenSaveImage {
     return originalImg;
   }
 
+  /* A function which takes an image and a filepath to the output file
+     and saves the image to the file as a .jpg file. Handles errors
+   */
   public static void SaveImage(BufferedImage img, String filePath) {
     File outputFile = null;
 

@@ -1,6 +1,4 @@
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
 
 public class PictureProcessing {
   public static void main(String[] args) {

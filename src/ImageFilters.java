@@ -2,6 +2,7 @@ import java.awt.image.BufferedImage;
 
 public class ImageFilters {
 
+  /* Takes an image and applies helper methods to blur the image */
   public static BufferedImage PixelArtFilter(BufferedImage img){
     int width = img.getWidth();
     int height = img.getHeight();
@@ -15,6 +16,10 @@ public class ImageFilters {
     return img;
   }
 
+  /* First helper method takes a square of pixels at a time based on a given square size
+     and uses this to calculate the average colour for a square of pixels. Uses this
+     to edit the pixels and blur the image
+   */
   private static void SquarePixelator(BufferedImage img, int x, int y, int sqrSize){
     int width = img.getWidth();
     int height = img.getHeight();
@@ -48,6 +53,9 @@ public class ImageFilters {
     }
   }
 
+  /* Helper method to check that a given pixel is within the scope and range of the
+     specified image
+   */
   private static boolean isValidPixel(int x, int y, int width, int height){
     return ((x >= 0) && (x < width) && (y >= 0) && (y < height));
   }

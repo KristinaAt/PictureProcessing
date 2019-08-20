@@ -2,6 +2,8 @@ import java.awt.image.BufferedImage;
 
 public class Utils {
 
+  /* Below are methods to set the RGB values both in one go and as individual components */
+
   public static void setRGB(int x, int y, long R, long G, long B, BufferedImage img){
     long RGB = (R << 16) | (G << 8) | B;
     img.setRGB(x, y, (int) RGB);
@@ -24,6 +26,10 @@ public class Utils {
     RGB |= B;
     img.setRGB(x, y, RGB);
   }
+
+  /* Below are getter methods to get the R, G and B values respectively and return their values
+     using bitwise masks with the bitwise and operator
+   */
 
   public static int getR(int x, int y, BufferedImage img){
     int ARGB = img.getRGB(x, y);
