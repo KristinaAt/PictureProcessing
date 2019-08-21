@@ -1,3 +1,5 @@
+package Filters;
+
 import java.awt.image.BufferedImage;
 
 public class Utils {
@@ -44,5 +46,12 @@ public class Utils {
   public static int getB(int x, int y, BufferedImage img){
     int ARGB = img.getRGB(x, y);
     return (ARGB & 0xff);
+  }
+
+  /* Helper method to check that a given pixel is within the scope and range of the
+   specified image
+ */
+  public static boolean isValidPixel(int x, int y, int width, int height){
+    return ((x >= 0) && (x < width) && (y >= 0) && (y < height));
   }
 }
