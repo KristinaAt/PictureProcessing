@@ -1,3 +1,4 @@
+import Filters.GreyscaleFilter;
 import Filters.InvertFilter;
 import Filters.PixelArtFilter;
 
@@ -9,6 +10,5 @@ public class PictureProcessing {
     BufferedImage img = OpenSaveImage.openImage(args[0]);
     img = InvertFilter.InvertFilter(img);
     OpenSaveImage.SaveImage(img, args[1]);
-
   }
 }
